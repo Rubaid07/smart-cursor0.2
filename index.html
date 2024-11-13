@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Cursor Framework - Dark Theme</title>
+    <!-- Tailwind CSS CDN -->
+     <link rel="stylesheet" href="src/output.css">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <!-- Smart Cursor Framework Script -->
+    <script src="https://rubaid07.github.io/smart-cursor/smart-cursor.js" defer></script>
+</head>
+<body class="bg-gray-900 text-gray-100 flex flex-col items-center justify-start min-h-screen py-10">
+
+    <!-- Header Section -->
+    <header class="text-center mb-8  mt-12">
+        <h1 class="text-5xl font-bold text-green-400  mt-12">Smart Cursor</h1>
+        <p class="text-lg text-gray-400 mt-4">Easily integrate dynamic cursor effects into your website!</p>
+    </header>
+
+    <!-- Demo Section -->
+    <section class="mb-12 text-center">
+        <h2 class="text-3xl font-semibold mb-6 text-gray-200">Live Demo</h2>
+        <button data-smart-cursor-snap="true" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-md">
+            Hover & Click Me
+        </button>
+        <div class="bg-yellow-500 hover:bg-yellow-600 text-black text-center font-bold py-5 px-10 rounded-md mt-6">
+            Try Hovering Here!
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section class="max-w-3xl mx-auto bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold mb-4 text-gray-100">How to Use the Smart Cursor Framework</h2>
+        <p class="mb-4 text-gray-300">To integrate the Smart Cursor framework into your project, follow the steps below:</p>
+
+        <!-- Step 1: Include the Script -->
+        <h3 class="text-xl font-bold mb-2 text-gray-200">Step 1: Add the Script</h3>
+        <p class="mt-4 mb-4">Add the following lines to the `head` section of your HTML file:</p>
+        <div class="relative">
+            <pre id="code1" class="bg-gray-700 p-4 rounded-lg overflow-auto mb-4 text-gray-200">
+&lt;script src="https://rubaid07.github.io/smart-cursor/smart-cursor.js" defer&gt;&lt;/script&gt;
+            </pre>
+            <button onclick="copyToClipboard('code1')" class="absolute top-2 right-2 bg-gray-600 p-1 rounded text-sm">Copy</button>
+        </div>
+
+        <!-- Step 2: Initialize the Cursor -->
+        <h3 class="text-xl font-bold mb-2 text-gray-200">Step 2: Initialize the Cursor</h3>
+        <p class="mt-4 mb-4">Add the following script to the end of the `body` tag in your HTML file:</p>
+        <div class="relative">
+            <pre id="code2" class="bg-gray-700 p-4 rounded-lg overflow-auto mb-4 text-gray-200">
+&lt;script&gt;
+document.addEventListener('DOMContentLoaded', function() {
+    initSmartCursor({
+        cursorColor: 'rgba(0, 255, 0, 0.6)', // Green cursor
+        cursorSize: 30,
+        cursorBlur: 2,
+        hoverScale: 1.8,
+        clickScale: 0.8
+    });
+});
+&lt;/script&gt;
+            </pre>
+            <button onclick="copyToClipboard('code2')" class="absolute top-2 right-2 bg-gray-600 p-1 rounded text-sm">Copy</button>
+        </div>
+
+        <!-- Step 3: Enable Cursor Snap on Elements -->
+        <h3 class="text-xl font-bold mb-2 text-gray-200">Step 3: Enable Cursor Snap on Elements</h3>
+        <p class="mt-4 mb-4">Add the ` data-smart-cursor-snap="true" ` attribute to the elements you want the cursor to snap to. For example:</p>
+        <div class="relative">
+            <pre id="code3" class="bg-gray-700 p-4 rounded-lg overflow-auto mb-4 text-gray-200">
+&lt;button data-smart-cursor-snap="true"&gt;Click me&lt;/button&gt;
+            </pre>
+            <button onclick="copyToClipboard('code3')" class="absolute top-2 right-2 bg-gray-600 p-1 rounded text-sm">Copy</button>
+        </div>
+        <p class="mt-4 mb-2">Users can customize the following features if they want:</p>
+        <ul style="list-style-type: circle;" class="p-5">
+            <li>cursorColor: cursor color</li>
+            <li>cursorSize: cursor size (in pixels)</li>
+            <li>cursorBlur: cursor blur effect (in pixels)</li>
+            <li>hoverScale: scale of the cursor when hovering</li>
+            <li>clickScale: Cursor scale when clicked</li>
+        </ul>
+        <p class="mt-4 mb-4">These customization options will help users create smart cursors to suit their website design.</p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="mt-12 text-gray-500 text-center text-sm">
+        &copy; 2024 - Smart Cursor by Rubaid07. All rights reserved.
+    </footer>
+
+    <!-- JavaScript for Copying Code -->
+    <script>
+        function copyToClipboard(elementId) {
+            const text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Copied to clipboard!");
+            }).catch(err => {
+                console.error("Failed to copy: ", err);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initSmartCursor({
+                cursorColor: 'rgba(0, 255, 0, 0.6)', 
+                cursorSize: 30,
+                cursorBlur: 4,
+                hoverScale: 1.6,
+                clickScale: 0.7
+            });
+        });
+    </script>
+</body>
+</html>
